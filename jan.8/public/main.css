@@ -8,3 +8,12 @@ p {
     color: aqua;
     text-align: center;
 }
+
+.note {
+    text-align: center;
+   
+}
+
+.note a {
+    text-decoration: none;
+}
