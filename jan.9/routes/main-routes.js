@@ -1,6 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
+const fs = require('fs');
 
 const data = [];
 
@@ -14,7 +15,7 @@ router.post('/note', (req, res, next) => {
     fs.writeFile('notes.txt', JSON.stringify(data), () => {
         res.status(302);
         res.redirect('/');
-    })
+    });
 
 })
 
