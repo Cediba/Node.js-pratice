@@ -9,7 +9,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 //---middleware---
-app.use(parser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(router);
 app.use(express.static('./public'))
 
