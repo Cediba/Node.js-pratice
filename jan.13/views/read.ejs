@@ -8,8 +8,8 @@
     <body>
         <h1>Notes by Others</h1>
         <ul>
-            <% notes.map((note) => { %>
-                <li> <%= note.author %>   </li>
+            <% notes.map(note => { %>
+            <li> <a href="/notes/<%= note.id %>"> <%= note.author %> </a></li>
             <% }) %>
         </ul>
         

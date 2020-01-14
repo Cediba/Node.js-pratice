@@ -22,3 +22,31 @@ exports.readNotes = (req, res, next) => {
         res.render('read', {notes: notes});
     });
 }
+
+exports.seeNote = (req, res, next) => {
+    const noteId = req.params.noteId;
+    console.log(noteId);
+
+    Note.getAll((notes) => {
+        const note = notes.find((nt) => nt.id == noteId)
+        console.log(note);
+        res.render('see', {note: note});
+    });
+
+}
+
+exports.deleteNote = (req, res, next) => {
+    const noteId = req.body.noteId;
+    Note.deleteNote(noteId);
+    res.redirect('/read');
+}    
+
+
+exports.updateNote = (req, res, next) => {
+    const noteId = req.body.noteId;
+    const title = req.body.title;
+    const content = req.body.content;
+
+    Note.updatedNote(noteId, title, content);
+    res.redirect('/notes/' + noteId);
+}

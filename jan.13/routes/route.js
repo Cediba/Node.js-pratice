@@ -8,6 +8,13 @@ router.get('/write', controller.writeNote);
 
 router.post('/write',controller.postNote);
 
+
+router.get('/notes/:noteId', controller.seeNote);
+
+router.post('/see', controller.deleteNote);
+
+router.post('/update', controller.updateNote);
+
 router.get('/read', controller.readNotes);
 
 module.exports = router;
